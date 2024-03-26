@@ -1,19 +1,19 @@
 import React, {useState} from 'react'
 
-export const Form = ({addTodo}) => {
+export const Form = ({addTask}) => {
     const [value, setValue] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (value) {
-          addTodo(value);
+          addTask(value);
           setValue('');
         }
       };
   return (
-    <form onSubmit={handleSubmit} className="TodoForm">
-    <input type="text" value={value} onChange={(e) => setValue(e.target.value)} className="todo-input" placeholder='Next Task' />
-    <button type="submit" className='todo-btn'>Add Task</button>
+    <form onSubmit={handleSubmit} className="TaskForm">
+    <input type="text" value={value} onChange={(e) => setValue(e.target.value)} className="task-input" placeholder='Next Task' />
+    <button type="submit" className='task-btn'>Add Task</button>
   </form>
   )
 }
